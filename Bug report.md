@@ -1,7 +1,5 @@
 # Bug Report
 
-|----------------------------------------------------------------------------------------------------------------------------|
-
 ## Bug Number 1 ##
 ### Description
 CONTENT-TYPE other than application/JSON should be rejected but TEXT/PLAIN is accepted.
@@ -16,8 +14,6 @@ CONTENT-TYPE TEXT is accepted. (Status Code = 200)
 - Create a test data file with .txt extention
 - Send the test data file to the HTTP POST request (header set to CONTENT-TYPE = TEXT/PLAIN) to the endpoint (https://lucent-trifle-ba3d62.netlify.app/.netlify/functions/checkcase)
 - The HTTP POST request is accepted but it is expected to be rejected.
-
-|----------------------------------------------------------------------------------------------------------------------------|
 
 ## Bug Number 2 ##
 ### Description
@@ -43,8 +39,6 @@ Further investigation is required how it is stored in the database. If the trail
 - Send the test data file to the HTTP POST request to the endpoint (https://lucent-trifle-ba3d62.netlify.app/.netlify/functions/checkcase)
 - The HTTP POST request is accepted but it should have been rejected.
 
-|----------------------------------------------------------------------------------------------------------------------------|
-
 ## Bug Number 3 ##
 ### Description
 patient_name with a string with 3 components is rejected but it should have been accepted.
@@ -68,8 +62,6 @@ patient_name with a string with 3 components is rejected. (Status Code = 422)
 - Send the test data file to the HTTP POST request to the endpoint (https://lucent-trifle-ba3d62.netlify.app/.netlify/functions/checkcase)
 - The HTTP POST request is rejected but it should have been accepted.
 
-|----------------------------------------------------------------------------------------------------------------------------|
-
 ## Bug Number 4 ##
 ### Description
 dob with an invalid date, i.e. 19700230, is not validated. 
@@ -92,8 +84,6 @@ dob wiht an invalid date is accepted. (Status Code = 200)
 }
 - Send the test data file to the HTTP POST request to the endpoint (https://lucent-trifle-ba3d62.netlify.app/.netlify/functions/checkcase)
 - The HTTP POST request is accepted but it should have been rejected.
-
-|----------------------------------------------------------------------------------------------------------------------------|
 
 ## Missing Requirements ##
 1. The requirements do not include expected behaviour for missing fields or missing values in the case metadata.
