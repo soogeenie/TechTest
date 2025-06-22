@@ -1,0 +1,6 @@
+{
+    "patient_id": "1234567^1^ISO^NN123^MC",
+    "patient_name": "Smith^John",
+    "dob" : "19700401",
+    "tissue_type": "prostate"
+}
