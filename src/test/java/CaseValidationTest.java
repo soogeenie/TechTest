@@ -68,9 +68,9 @@ public class CaseValidationTest {
                 header("Accept", "text/plain").
                 contentType(ContentType.TEXT).
                 body(Files.readString(path)).
-                when().
+        when().
                 post().
-                then().
+        then().
                 assertThat().
                 statusCode(415).
                 body("message", equalTo("Unsupported media"));
@@ -663,5 +663,4 @@ public class CaseValidationTest {
                 statusCode(200).
                 body("message", equalTo("Case valid"));
     }
-
 }
