@@ -85,6 +85,30 @@ dob wiht an invalid date is accepted. (Status Code = 200)
 - Send the test data file to the HTTP POST request to the endpoint (https://lucent-trifle-ba3d62.netlify.app/.netlify/functions/checkcase)
 - The HTTP POST request is accepted but it should have been rejected.
 
+## Bug # 5 ##
+### Description
+Unexpected field/property, i.e. patient_title, is not validated. 
+
+### Expected Behaviour
+The requirement does not documented what the expected behaviour is in such case. 
+
+### Actual Behaviour
+Unexpected field/property, i.e. patient_title, is accepted. (Status Code = 200)
+
+### Steps to reproduce
+- Create a test data file with .json extension
+- Add the following data to the test data file ("patient_title": "Mr.")
+{
+    "case_id": "a474e3e6-89ad-4bb9-be00-cba347e2a001",
+    "patient_id": "1234567^1^ISO^NN123^MC",
+    "patient_title": "Mr.",
+    "patient_name": "Smith^John",
+    "dob" : "19700401",
+    "tissue_type": "prostate"
+}
+- Send the test data file to the HTTP POST request to the endpoint (https://lucent-trifle-ba3d62.netlify.app/.netlify/functions/checkcase)
+- The HTTP POST request is accepted but is it the expected behaviour? Missing requirements.
+
 ## Missing Requirements ##
 1. The requirements do not include expected behaviour for missing fields or missing values in the case metadata.
-2. The requirements do not include expected behaviour when fields, other than the mandatory fields, are listed in the case metadata. 
+2. The requirements do not include expected behaviour when fields, other than the mandatory fields, are listed in the case metadata.
