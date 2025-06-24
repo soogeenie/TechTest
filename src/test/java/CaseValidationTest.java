@@ -62,7 +62,7 @@ public class CaseValidationTest {
     // 1.3 Invalid, CONTENT-TYPE 'TEXT'
     @Test
     public void validateContentTypeText() throws IOException, URISyntaxException {
-        Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader().getResource("1-3.xml")).toURI());
+        Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader().getResource("1-3.json")).toURI());
 
         given().
                 header("Accept", "text/plain").
@@ -73,7 +73,7 @@ public class CaseValidationTest {
                 then().
                 assertThat().
                 statusCode(415).
-                body("message", equalTo("Case invalid"));
+                body("message", equalTo("Unsupported media"));
     }
 
     // 2. Required Fields (REQ-2)
